@@ -4,15 +4,23 @@ let sbNum = 0
 $("#answer").text(sbNum);
 
 
+
+
 $(".input").on("click",function(){
   let num = $(this).text();
   let numZ = $("#answer").text();
+  let lonNum = numZ.slice(-1);
+
+  if (numZ.length >= "10"){
+    return;
+  }
 
   if (numZ === "0"){
   $("#answer").text(num);
   }else{
   $("#answer").append(num);
   }
+
 });
 
 
@@ -35,6 +43,10 @@ $(".input_op").on("click",function(){
 
   if (["+","-","*","/","."].includes(lastChar)){
   return;
+  }
+
+  if (currentText.length >= "10"){
+    $("#answer").text("E");
   }
 
   $("#answer").append(sumNum);
