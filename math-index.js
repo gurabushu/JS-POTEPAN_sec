@@ -24,8 +24,7 @@ $(".input_zero").on("click",function(){
   return;
   }
 
-  $("#answer").text(element_Num);
-  $("#answer").append(element_Num);       
+  $("#answer").append(element_Num);     
 });
 
 
